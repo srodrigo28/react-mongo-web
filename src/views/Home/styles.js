@@ -13,4 +13,9 @@ export const FilterArea = styled.div`
     justify-content: space-around;
 
     margin-top: 30px;
+
+    button{
+        border: none;
+        background: transparent;
+    }
 `;
