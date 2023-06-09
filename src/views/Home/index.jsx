@@ -7,7 +7,13 @@ export function Home() {
     return (
         <S.Container>
             <Header />
+            <S.FilterArea>
                 <FilterCard />
+                <FilterCard />
+                <FilterCard />
+                <FilterCard />
+                <FilterCard />
+            </S.FilterArea>
             <Footer />
         </S.Container>
     )
