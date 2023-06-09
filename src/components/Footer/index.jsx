@@ -1,9 +1,9 @@
-import { Container } from "./styles";
+import * as S from "./styles";
 
 export function Footer() {
     return (
-        <Container>
-            <h1>Footer</h1>
-        </Container>
+        <S.Container>
+            <span>Seb Soluções Coporation & Developments</span>
+        </S.Container>
     )
 }
