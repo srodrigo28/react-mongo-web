@@ -8,11 +8,11 @@ export function Home() {
         <S.Container>
             <Header />
             <S.FilterArea>
-                <FilterCard />
-                <FilterCard />
-                <FilterCard />
-                <FilterCard />
-                <FilterCard />
+                <FilterCard title="Todos"/>
+                <FilterCard title="Hoje"/>
+                <FilterCard title="Semana"/>
+                <FilterCard title="Mês"/>
+                <FilterCard title="Ano"/>
             </S.FilterArea>
             <Footer />
         </S.Container>

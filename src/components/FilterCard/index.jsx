@@ -1,11 +1,11 @@
 import * as S from "./styles";
 import filter from './../../assets/filter.png'
 
-export function FilterCard() {
+export function FilterCard({title}) {
     return (
         <S.Container>
             <img src={filter} alt="icone filter" />
-            <span>Hoje</span>
+            <span>{title}</span>
         </S.Container>
     )
 }
