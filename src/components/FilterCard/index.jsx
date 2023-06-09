@@ -1,9 +1,9 @@
-import { Container } from "./styles";
+import * as S from "./styles";
 
 export function FilterCard() {
     return (
-        <Container>
-            <h1>Filter Card</h1>
-        </Container>
+        <S.Container>
+            ...
+        </S.Container>
     )
 }
