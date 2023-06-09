@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 220px;
     height: 90px;
-    background-color: ${ props => props.actived ? '#EE6B26' : '#20295F' };
+    background-color: ${props => props.actived ? "#EE6B26" : "#20295F" };
     box-sizing: border-box;
     border-radius: 7px;
     transition: .7s;
