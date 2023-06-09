@@ -1,9 +1,10 @@
-import { Container } from "./styles";
+import { Header } from './../../components/Header'
+import * as S from './styles'
 
-export function QrCode() {
+export function Home() {
     return (
-        <Container>
-            <h1>QrCode</h1>
-        </Container>
+        <S.Container>
+            <Header />
+        </S.Container>
     )
 }

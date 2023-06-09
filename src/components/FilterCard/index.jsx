@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 
-export function QrCode() {
+export function FilterCard() {
     return (
         <Container>
-            <h1>QrCode</h1>
+            <h1>Filter Card</h1>
         </Container>
     )
 }
