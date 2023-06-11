@@ -2,14 +2,27 @@ import { Header } from './../../components/Header'
 import { Footer } from './../../components/Footer'
 import { FilterCard } from './../../components/FilterCard'
 import { TaskCard } from './../../components/TaskCard'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from './styles'
+import api from './../../services/api'
 
 export function Home() {
-    const [filterActived, setFilterActived] = useState("all")
+    const [filterActived, setFilterActived] = useState("all");
+    const [tasks, setTasks] = useState([]);
+    const makadress = "123123123";
+    async function loadTasks() {
+        await api.get(`/task/filter/${filterActived}/${makadress}`)
+        .then(response => {
+            setTasks(response.data);
+        })
+    }
+    useEffect(() => {
+        loadTasks();
+    }, [filterActived]);
     return (
         <S.Container>
-            <Header />
+            <p>{!tasks}</p>
+            <Header onClick={loadTasks} />
             <S.FilterArea>
                 <button onClick={ () => setFilterActived("all") } >
                     <FilterCard title="Todos" actived={filterActived == ("all") }/>
@@ -33,15 +46,6 @@ export function Home() {
             </S.Title>
 
             <S.Content>
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
                 <TaskCard />
             </S.Content>
 
