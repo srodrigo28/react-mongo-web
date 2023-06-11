@@ -70,7 +70,7 @@ export function Home() {
             </S.FilterArea>
 
             <S.Title>
-                <h3>Tarefas</h3>
+                <h3>{ filterActived == 'late' ? 'Tarefas Atrasadas' : 'Tarefas Atualis'}</h3>
             </S.Title>
 
             <S.Content>
