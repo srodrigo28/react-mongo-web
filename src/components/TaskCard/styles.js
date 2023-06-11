@@ -16,6 +16,11 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover{
+        opacity: .5;
+    }
 `;
 export const TopCard = styled.div`
     display: flex;

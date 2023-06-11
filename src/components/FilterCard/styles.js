@@ -3,15 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 220px;
     height: 90px;
-    background-color: ${props => props.actived ? "#EE6B26" : "#20295F" };
-    box-sizing: border-box;
-    border-radius: 7px;
-    transition: .7s;
-
+    
     display: flex;
     padding: 20px;
     flex-direction: column;
     justify-content: space-around;
+    
+    transition: .7s;
+    border-radius: 7px;
+    box-sizing: border-box;
+    background-color: ${props => props.actived ? "#EE6B26" : "#20295F" };
 
     img{
         width: 25px;
