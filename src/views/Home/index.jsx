@@ -8,7 +8,8 @@ import api from './../../services/api'
 import * as S from './styles'
 
 export function Home() {
-    const id = uuidv4();
+    // Atenção Aqui
+    // const id = uuidv4();
     const [filterActived, setFilterActived] = useState("all");
     const [tasks, setTasks] = useState([]);
 
@@ -66,7 +67,7 @@ export function Home() {
             <S.Content>
                 { tasks.map(t=> (
                     <TaskCard
-                        key={t._id+id}
+                        key={ uuidv4() } // Atenção Aqui
                         type={t.type}
                         title={t.title} 
                         when={t.when}

@@ -28,9 +28,10 @@ export const Content = styled.div`
     margin-top: 30px;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.div`
     width: 100%;
     display: flex;
+    margin-top: 50px;
     justify-content: center;
     position: relative;
     border-bottom: 3px solid #20295F;
