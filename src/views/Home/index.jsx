@@ -24,6 +24,9 @@ export function Home() {
             setLateCount(response.data.length);
         })
     }
+    function Nofification(){
+        setFilterActived('late');
+    }
     useEffect(() => {
         loadTasks();
         lateVerify();
@@ -32,8 +35,8 @@ export function Home() {
 
     return (
         <S.Container>
-            <Header lateCount={lateCount}/>
             <S.FilterArea>
+                <Header lateCount={lateCount} clickNotification={Nofification} />
                 <button  onClick={ () => setFilterActived("all") } >
                     <FilterCard 
                         title="Todos"   

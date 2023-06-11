@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    margin-top: -30px;
     width: 100%;
     height: 70px;
 
@@ -35,7 +36,7 @@ export const RightSide = styled.div`
     align-items: center;
     justify-content: flex-end;
 
-    a{
+    a, button{
         color: #fff;
         margin: 0 10px;
 
@@ -46,6 +47,9 @@ export const RightSide = styled.div`
             color: #EE6B26;
             font-size: 1.1em;
         }
+    }
+    button{
+        cursor: pointer;
     }
 
     #notification{

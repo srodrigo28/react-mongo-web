@@ -2,7 +2,8 @@ import * as S from './styles'
 import logo from './../../assets/logo.png'
 import bell from './../../assets/bell.png'
 
-export function Header({lateCount}) {
+// eslint-disable-next-line react/prop-types
+export function Header( {lateCount, clickNotification})  {
     return (
         <S.Container>
             <S.LeftSide>
@@ -16,10 +17,10 @@ export function Header({lateCount}) {
                 <span className="dividir" />
                 <a href="#">Sincronizar Celular</a>
                 <span className="dividir" />
-                <a href="#" id='notification'>
+                <button type='button'  onClick={clickNotification} id='notification'>
                     <img src={bell} alt="sinalização" />
                     <span>{lateCount}</span>
-                </a>
+                </button>
             </S.RightSide>
         </S.Container>
     )
