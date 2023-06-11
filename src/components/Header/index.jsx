@@ -2,7 +2,7 @@ import * as S from './styles'
 import logo from './../../assets/logo.png'
 import bell from './../../assets/bell.png'
 
-export function Header() {
+export function Header({lateCount}) {
     return (
         <S.Container>
             <S.LeftSide>
@@ -18,7 +18,7 @@ export function Header() {
                 <span className="dividir" />
                 <a href="#" id='notification'>
                     <img src={bell} alt="sinalização" />
-                    <span>5</span>
+                    <span>{lateCount}</span>
                 </a>
             </S.RightSide>
         </S.Container>

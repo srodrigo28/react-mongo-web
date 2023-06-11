@@ -8,10 +8,9 @@ import api from './../../services/api'
 import * as S from './styles'
 
 export function Home() {
-    // Atenção Aqui
-    // const id = uuidv4();
     const [filterActived, setFilterActived] = useState("all");
     const [tasks, setTasks] = useState([]);
+    const [lateCount, setLateCount] = useState();
 
     async function loadTasks() {
         await api.get(`/task/filter/${filterActived}/00:1B:44:11:3A:B9`)
@@ -19,14 +18,21 @@ export function Home() {
             setTasks(response.data);
         })
     }
+    async function lateVerify() {
+        await api.get(`/task/filter/late/00:1B:44:11:3A:B9`)
+        .then(response => {
+            setLateCount(response.data.length);
+        })
+    }
     useEffect(() => {
         loadTasks();
+        lateVerify();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]);
+    },[filterActived]);
 
     return (
         <S.Container>
-            <Header/>
+            <Header lateCount={lateCount}/>
             <S.FilterArea>
                 <button  onClick={ () => setFilterActived("all") } >
                     <FilterCard 
