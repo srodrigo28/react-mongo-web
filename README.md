@@ -11,3 +11,8 @@ https://www.udemy.com/course/projeto-completo-xd-nodejs-mongodb-react-native-e-r
 ```
 npm i styled-components@latest
 ```
+
+* Config Icones Pastas
+```
+https://gist.github.com/rupeshtiwari/6860fbc1b3e2f6711c780070d6f59748
+```
