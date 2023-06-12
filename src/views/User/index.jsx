@@ -15,12 +15,12 @@ export function User(){
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 
-    // async function lateVerify() {
-    //     await api.get(`/user`)
-    //     .then(response => {
-    //         setLateCount(response.data.length);
-    //     })
-    // }
+    async function lateVerify() {
+        await api.get(`/user`)
+        .then(response => {
+            setLateCount(response.data.length);
+        })
+    }
 
     async function Save() {
         await api.post('/user', {
@@ -32,13 +32,12 @@ export function User(){
         )
     }
 
-    // useEffect(() => {
-    //     lateVerify()
-    // }, [])
+    useEffect(() => {
+        lateVerify()
+    }, [])
     return(
         <S.Container>
              <Header lateCount={lateCount} />
-
             <S.Form>
                 <S.TypeIcons>
                 { 
