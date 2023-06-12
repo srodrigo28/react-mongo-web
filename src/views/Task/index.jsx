@@ -13,13 +13,13 @@ import { Footer } from './../../components/Footer'
 
 export function Task(){
     const [lateCount, setLateCount] = useState()
-    const [type, setType] = useState()
+    const [type, setType] = useState(2)
     const [id, setId] = useState()
     const [done, setDone] = useState(false)
-    const [title, setTitle] = useState()
-    const [description, setDescription] = useState()
-    const [date, setDate] = useState()
-    const [hour, setHour] = useState()
+    const [title, setTitle] = useState("Padrão Title")
+    const [description, setDescription] = useState("Padrão Description")
+    const [date, setDate] = useState("2023-06-02")
+    const [hour, setHour] = useState("02:02:00")
     const [macaddress, setMacaddress] = useState('00:1B:44:11:3A:B9')
 
     async function lateVerify() {
@@ -48,17 +48,14 @@ export function Task(){
 
             <S.Form>
                 <S.TypeIcons>
-
                 { 
                      TypeIcons.map(( Icon, index) => (
                         index > 0 && 
-                        <button key={uuidv4()} type="button" onClick={ () => setType(index)} >
-                            <img src={Icon} alt="Tipo da tarefa" 
-                            className={ type && type != index && 'inative'} />
+                        <button key={uuidv4()} type="button" onClick={ () => setType(index = 2)} >
+                            <img src={Icon} alt="Tipo da tarefa"  />
                         </button>
                     ))
                  }
-
                 </S.TypeIcons>
 
                 <S.Input>
@@ -83,8 +80,7 @@ export function Task(){
                     <span>Data</span>
                     <input
                         type="date"
-                        value={date}
-                        onChange={ e => setDate(e.target.value) }
+                        onChange={ e => setDate(e.target.value) } value={date}
                         placeholder="Titulo da tarefa ..."
                     />
                     <img src={iconCalendar} alt="calendario" />
@@ -94,8 +90,7 @@ export function Task(){
                     <span>Hora</span>
                     <input
                         type="time"
-                        value={hour}
-                        onChange={ e => setHour(e.target.value) }
+                        onChange={ e => setHour(e.target.value) } value={hour}
                         placeholder="Titulo da tarefa ..."
                     />
                     <img src={iconClock} alt="icone relogio" />
