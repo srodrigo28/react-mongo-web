@@ -7,17 +7,13 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: center;
-
 `;
-
 export const Form = styled.div`
     margin-top: -40px;
     width: 50%;
     height: 500px;
 `;
-
 export const TypeIcons = styled.div`
-   
     width: 100%;
 
     display: flex;
@@ -46,22 +42,21 @@ export const TypeIcons = styled.div`
         opacity: .8;
     }
 `;
-
 export const Input = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
 
     margin: 18px 0;
-
     span{
         color: #909090;
         margin: 5px 0;
     }
     input{
-        font-size: 18px;
-        padding: 15px;
+        outline: none;
         border: none;
+        padding: 15px;
+        font-size: 18px;
         border-bottom: 2px solid #EE6B26
     }
     img{
@@ -72,9 +67,10 @@ export const Input = styled.div`
         bottom: 30px;
         display: none;
     }
-`
+`;
 export const TextArea = styled.div`
     width: 100%;
+
     display: flex;
     flex-direction: column;
 
@@ -86,23 +82,23 @@ export const TextArea = styled.div`
     }
 
     textarea{
+        outline: none;
         font-size: 18px;
         border: 2px solid #EE6B26
     }
-`
-
+`;
 export const Option = styled.div`
     display: flex;
     justify-content: space-between;
 
     button{
         cursor: pointer;
-        font-weight: bold;
-        color: #18295f;
-        border: none;
-        background: none;
-        font-size: 18px;
-        transition: 1s ease;
+            font-weight: bold;
+            color: #18295f;
+            border: none;
+            background: none;
+            font-size: 18px;
+            transition: 1s ease;
         &:hover{
             opacity: 0.7;
             font-size: 22px;
@@ -139,5 +135,4 @@ export const Save = styled.div`
             padding: 12px;
         }
     }
-
-`
+`;
