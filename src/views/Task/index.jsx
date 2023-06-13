@@ -40,15 +40,26 @@ export function Task({match}){
         })
     }
     async function Save() {
-        await api.post('/task', {
-            macaddress,
-            type,
-            title,
-            description,
-            when: `${date}T${hour}:00.000`
-        })
-        .then(() => alert('Cadastrado com sucesso')
-        )
+        if(match.params.id){
+            await api.put(`/task/${match.params.id}`, {
+                macaddress,
+                done,
+                type,
+                title,
+                description,
+                when: `${date}T${hour}:00.000`
+            })
+        }else{
+            await api.post('/task', {
+                macaddress,
+                type,
+                title,
+                description,
+                when: `${date}T${hour}:00.000`
+            })
+            .then(() => alert('Cadastrado com sucesso')
+            )
+        }
     }
     useEffect(() => {
         lateVerify()
