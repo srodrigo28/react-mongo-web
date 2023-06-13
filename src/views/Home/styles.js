@@ -26,6 +26,12 @@ export const Content = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
+
+    a{
+        color: #000;
+        text-decoration: none;
+        
+    }
 `;
 
 export const Title = styled.div`

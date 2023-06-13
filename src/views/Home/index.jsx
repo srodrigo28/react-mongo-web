@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import {v4 as uuidv4} from 'uuid';
 import api from './../../services/api'
 import * as S from './styles'
+import { Link } from 'react-router-dom'
 
 export function Home() {
     const [filterActived, setFilterActived] = useState("all");
@@ -75,12 +76,9 @@ export function Home() {
 
             <S.Content>
                 { tasks.map(t=> (
-                    <TaskCard
-                        key={ uuidv4() } // Atenção Aqui
-                        type={t.type}
-                        title={t.title} 
-                        when={t.when}
-                    />
+                    <Link to={`/task/${t._id}`} key={ uuidv4()} >
+                        <TaskCard type={t.type} title={t.title}  when={t.when} />
+                    </Link>
                 ))}
             </S.Content>
             <Footer />

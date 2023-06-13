@@ -7,11 +7,12 @@ import iconClock from '../../assets/clock.png'
 import api from '../../services/api'
 import TypeIcons from "../../services/typeIcons"
 import {v4 as uuidv4} from 'uuid';
+import { format } from 'date-fns'
 
 import { Header } from './../../components/Header'
 import { Footer } from './../../components/Footer'
 
-export function Task(){
+export function Task({match}){
     const [lateCount, setLateCount] = useState()
     const [type, setType] = useState(2)
     const [id, setId] = useState()
@@ -28,6 +29,16 @@ export function Task(){
             setLateCount(response.data.length);
         })
     }
+    async function LoadTaskDetails(){
+        await api.get(`/task/${match.params.id}`)
+        .then( response => {
+            setType(response.data.type)
+            setTitle(response.data.title)
+            setDescription(response.data.description)
+            setDate(format(new Date(response.data.when), 'yyyy-MM-dd' ))
+            setHour(format(new Date(response.data.when), 'HH:mm' ))
+        })
+    }
     async function Save() {
         await api.post('/task', {
             macaddress,
@@ -41,6 +52,7 @@ export function Task(){
     }
     useEffect(() => {
         lateVerify()
+        LoadTaskDetails();
     }, [])
     return(
         <S.Container>
