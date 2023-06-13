@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Task } from './views/Task'
+import { Routes } from './services/routes'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <Task/>
+    <Routes />
   </React.StrictMode>,
 )
